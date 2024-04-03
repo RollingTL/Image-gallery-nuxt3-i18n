@@ -1,9 +1,15 @@
-<script setup lang="ts">
-const count = ref(1);
-</script>
+<script setup lang="ts"></script>
 <template>
   <div>
-    <h1>Gallery</h1>
-    <div>{{ count }}</div>
+    <h1>{{ $t("siteTitle") }}</h1>
+    <MainMenu class="mainMenu" />
+    <LangSwitcher />
+    <NuxtPage />
   </div>
 </template>
+
+<style lang="scss" scoped>
+.mainMenu {
+  padding-bottom: 1rem;
+}
+</style>
