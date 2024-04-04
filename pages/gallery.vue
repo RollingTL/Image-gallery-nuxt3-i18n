@@ -5,9 +5,12 @@ const { t } = useI18n({
 </script>
 <template>
   <div>
-    <h2>{{ $t("gallery") }}</h2>
-    <div>
-      {{ t("galleryInfo") }}
+    <NuxtPage v-if="$route.params.id" />
+    <div v-else>
+      <h2>{{ $t("gallery") }}</h2>
+      <div>
+        {{ t("galleryInfo") }}
+      </div>
     </div>
   </div>
 </template>
