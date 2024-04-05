@@ -3,6 +3,17 @@ const route = useRoute()
 const { data: itemData } = await useAsyncData(`content-${route.path}`, () =>
   queryContent().where({ _path: route.path }).find()
 )
+
+useSeoMeta({
+  title: itemData.value ? itemData.value[0].title : 'galleryMetaTitle',
+  ogTitle: itemData.value ? itemData.value[0].title : 'galleryMetaTitle',
+  description: itemData.value
+    ? itemData.value[0].description
+    : 'galleryMetaDescription',
+  ogDescription: itemData.value
+    ? itemData.value[0].description
+    : 'galleryMetaDescription'
+})
 </script>
 
 <template>
