@@ -1,20 +1,13 @@
 <script setup lang="ts">
 const { t } = useI18n({
-  useScope: "local",
-});
+  useScope: 'local'
+})
 </script>
 <template>
   <div>
-    <h2>{{ $t("home") }}</h2>
+    <h2>{{ $t('homeTopTitle') }}</h2>
     <div>
-      {{ t("introText") }}
+      {{ t('homeIntroText') }}
     </div>
   </div>
 </template>
-
-<i18n lang="yaml">
-en:
-  introText: "Introductory text"
-ru:
-  introText: "Вводный текст"
-</i18n>

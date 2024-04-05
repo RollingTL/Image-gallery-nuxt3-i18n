@@ -1,17 +1,17 @@
 <script setup lang="ts">
-const localePath = useLocalePath();
+const localePath = useLocalePath()
 </script>
 <template>
   <div>
     <span>
-      <NuxtLink :to="localePath('/')">{{ $t("home") }}</NuxtLink>
+      <NuxtLink :to="localePath('/')">{{ $t('homeLink') }}</NuxtLink>
     </span>
     <span>
-      <NuxtLink :to="localePath('/artist')">{{ $t("artist") }}</NuxtLink>
+      <NuxtLink :to="localePath('/artist')">{{ $t('artistLink') }}</NuxtLink>
     </span>
     <span>
       <NuxtLink :to="localePath('/gallery')">
-        {{ $t("gallery") }}
+        {{ $t('galleryLink') }}
       </NuxtLink>
     </span>
   </div>

@@ -1,0 +1,21 @@
+# Тексты пунктов основного меню
+homeLink: 'Главная'
+artistLink: 'Художник'
+galleryLink: 'Галерея'
+# глобальные
+siteTopTitle: 'Галерея художника'
+# домашняя страница
+homeMetaTitle: 'Галерея художника'
+homeMetaDescription: 'Персональная галерея'
+homeTopTitle: 'Заголовок на главной'
+homeIntroText: 'Текст на главной'
+# страница художника
+artistMetaTitle: 'Имя художника'
+artistMetaDescription: 'Биография'
+artistTopTitle: 'Заголовок страницы художника'
+artistIntroText: 'Текст о художнике'
+# страница галереи
+galleryMetaTitle: 'Галерея произведений'
+galleryMetaDescription: 'Список картин'
+galleryTopTitle: 'Заголовок галереи'
+galleryIntroText: 'Текст галереи'

@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 <template>
   <div>
-    <h1>{{ $t("siteTitle") }}</h1>
+    <h1>{{ $t('siteTopTitle') }}</h1>
     <MainMenu class="mainMenu" />
     <LangSwitcher />
     <NuxtPage />

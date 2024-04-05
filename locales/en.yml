@@ -1,0 +1,21 @@
+# Main menu items texts
+homeLink: 'Home'
+artistLink: 'Artist'
+galleryLink: 'Gallery'
+# global
+siteTopTitle: "Artist's gallery"
+# home page
+homeMetaTitle: "Artist's gallery"
+homeMetaDescription: 'Personal gallery'
+homeTopTitle: 'Home top title'
+homeIntroText: 'Home text'
+# artist page
+artistMetaTitle: 'Artist name'
+artistMetaDescription: 'Biography'
+artistTopTitle: 'Artist top title'
+artistIntroText: 'Artist text'
+# gallery page
+galleryMetaTitle: 'Gallery of artwork'
+galleryMetaDescription: 'List or paintings'
+galleryTopTitle: 'Gallery top title'
+galleryIntroText: 'Gallery text'
