@@ -1,26 +1,26 @@
 <script setup lang="ts">
+const { t, locale } = useI18n()
 const route = useRoute()
-const { data: itemData } = await useAsyncData(`content-${route.path}`, () =>
-  queryContent().where({ _path: route.path }).find()
+const localePath = useLocalePath()
+const { data } = await useAsyncData(
+  'page-data',
+  () =>
+    queryContent()
+      .where({ _path: '/gallery/' + route.params.id, _locale: locale.value })
+      .findOne(),
+  {
+    watch: [route]
+  }
 )
-
-useSeoMeta({
-  title: itemData.value ? itemData.value[0].title : 'galleryMetaTitle',
-  ogTitle: itemData.value ? itemData.value[0].title : 'galleryMetaTitle',
-  description: itemData.value
-    ? itemData.value[0].description
-    : 'galleryMetaDescription',
-  ogDescription: itemData.value
-    ? itemData.value[0].description
-    : 'galleryMetaDescription'
-})
 </script>
 
 <template>
   <div>
-    <div v-if="itemData">
-      <h2>{{ itemData[0].title }}</h2>
-      <div>{{ itemData[0].description }}</div>
-    </div>
+    <h2>Child</h2>
+    {{ route.path }}
+    <ContentRenderer :value="data" v-if="data">
+      <h1>{{ data.title }}</h1>
+      <h2>{{ data.description }}</h2>
+    </ContentRenderer>
   </div>
 </template>
