@@ -11,11 +11,13 @@ const query: QueryBuilderParams = {
     {{ localePath('/gallery') }}
     <ContentList :query="query">
       <template #default="{ list }">
-        <div v-for="article in list" :key="article._path">
-          <NuxtLink :to="localePath(article._path)"
-            >{{ article.title }}
-          </NuxtLink>
-        </div>
+        <ul>
+          <li v-for="article in list" :key="article._path">
+            <NuxtLink :to="localePath(article._path)"
+              >{{ article.title }}
+            </NuxtLink>
+          </li>
+        </ul>
       </template>
       <template #not-found>
         <p>No articles found.</p>
