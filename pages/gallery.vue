@@ -4,7 +4,7 @@ const { t, locale } = useI18n()
 const localePath = useLocalePath()
 const query: QueryBuilderParams = {
   _path: '/gallery',
-  _locale: locale.value
+  where: [{ _locale: locale.value }]
 }
 </script>
 <template>
