@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 const { t, locale } = useI18n()
 const localePath = useLocalePath()
-import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 const query: QueryBuilderParams = {
   _path: '/gallery',
   where: [{ _locale: locale.value }]
