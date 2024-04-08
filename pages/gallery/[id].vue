@@ -7,10 +7,8 @@ const localePath = useLocalePath()
 
 <template>
   <div>
-    <h2>Child</h2>
     {{ route.path }}
-    {{ localePath(route.path) }}
-    <ContentDoc :path="route.path" :locale="locale" v-slot="{ doc }">
+    <ContentDoc v-slot="{ doc }">
       <h1>{{ doc.title }}</h1>
       <h2>{{ doc.description }}</h2>
     </ContentDoc>
