@@ -1,0 +1,82 @@
+<script setup lang="ts">
+const { t, locale } = useI18n()
+
+useSeoMeta({
+  title: t('galleryMetaTitle'),
+  ogTitle: t('galleryMetaTitle'),
+  description: t('galleryMetaDescription'),
+  ogDescription: t('galleryMetaDescription')
+})
+
+const localePath = useLocalePath()
+const route = useRoute()
+const { data } = await useAsyncData(
+  localePath('gallery'),
+  () => queryContent().where({ _locale: locale.value }).find(),
+  {
+    watch: [locale]
+  }
+)
+</script>
+<template>
+  <div>
+    <div v-if="route.params.id === undefined">
+      <h2>{{ $t('galleryTopTitle') }}</h2>
+      <div>
+        {{ $t('galleryIntroText') }}
+      </div>
+      <ul>
+        <li v-for="item in data" :key="item.title + locale + route.fullPath">
+          <NuxtLink :to="localePath(item._path ? item._path : '')">{{
+            item.title + ' ' + localePath(item._path ? item._path : '')
+          }}</NuxtLink>
+        </li>
+      </ul>
+    </div>
+    <NuxtPage />
+    <div>
+      <h3>Parent</h3>
+      <div>locale - {{ locale }}</div>
+      <div>route.path - {{ route.path }}</div>
+      <div>route.params.id - {{ route.params.id }}</div>
+      <div>localePath('gallery') - {{ localePath('gallery') }}</div>
+      <div>key - {{ `content-${localePath('gallery')}-${locale}` }}</div>
+    </div>
+    <ContentRenderer :value="data">
+      <template #empty>
+        <p>No content found.</p>
+      </template>
+    </ContentRenderer>
+  </div>
+</template>
+
+
+<script setup lang="ts">
+const route = useRoute()
+const { locale } = useI18n()
+
+// useSeoMeta({
+//   title: itemData.value ? itemData.value[0].title : 'galleryMetaTitle',
+//   ogTitle: itemData.value ? itemData.value[0].title : 'galleryMetaTitle',
+//   description: itemData.value
+//     ? itemData.value[0].description
+//     : 'galleryMetaDescription',
+//   ogDescription: itemData.value
+//     ? itemData.value[0].description
+//     : 'galleryMetaDescription'
+// })
+</script>
+
+<template>
+  <div>
+    <!-- <div v-if="itemData"> -->
+    <!-- <h2>{{ itemData[0].title }}</h2>
+      <div>{{ itemData[0].description }}</div> -->
+    <!-- </div> -->
+    <div>
+      <h3>Child</h3>
+      <div>locale - {{ locale }}</div>
+      <div>route.path - {{ route.path }}</div>
+    </div>
+  </div>
+</template>

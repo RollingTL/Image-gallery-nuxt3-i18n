@@ -1,26 +1,16 @@
 <script setup lang="ts">
+import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+const { t, locale } = useI18n()
 const route = useRoute()
-const { data: itemData } = await useAsyncData(`content-${route.path}`, () =>
-  queryContent().where({ _path: route.path }).find()
-)
-
-useSeoMeta({
-  title: itemData.value ? itemData.value[0].title : 'galleryMetaTitle',
-  ogTitle: itemData.value ? itemData.value[0].title : 'galleryMetaTitle',
-  description: itemData.value
-    ? itemData.value[0].description
-    : 'galleryMetaDescription',
-  ogDescription: itemData.value
-    ? itemData.value[0].description
-    : 'galleryMetaDescription'
-})
+const localePath = useLocalePath()
 </script>
 
 <template>
   <div>
-    <div v-if="itemData">
-      <h2>{{ itemData[0].title }}</h2>
-      <div>{{ itemData[0].description }}</div>
-    </div>
+    {{ route.path }}
+    <ContentDoc :path="localePath(route.path)" v-slot="{ doc }">
+      <h1>{{ doc.title }}</h1>
+      <h2>{{ doc.description }}</h2>
+    </ContentDoc>
   </div>
 </template>

@@ -1,31 +1,28 @@
 <script setup lang="ts">
-const { t } = useI18n()
-useSeoMeta({
-  title: t('galleryMetaTitle'),
-  ogTitle: t('galleryMetaTitle'),
-  description: t('galleryMetaDescription'),
-  ogDescription: t('galleryMetaDescription')
-})
-
+import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+const { t, locale } = useI18n()
 const localePath = useLocalePath()
-const route = useRoute()
-const { data } = await useAsyncData('gallery', () =>
-  queryContent(localePath('gallery')).find()
-)
+const query: QueryBuilderParams = {
+  path: localePath('/gallery')
+}
 </script>
 <template>
-  <div>
-    <div v-if="route.params.id === undefined">
-      <h2>{{ $t('galleryTopTitle') }}</h2>
-      <div>
-        {{ $t('galleryIntroText') }}
-      </div>
-      <ul>
-        <li v-for="item in data" :key="item.title">
-          <NuxtLink :to="item._path">{{ item.title }}</NuxtLink>
-        </li>
-      </ul>
-    </div>
-    <NuxtPage v-else />
-  </div>
+  <main>
+    {{ localePath('/gallery') }}
+    <ContentList :query="query">
+      <template #default="{ list }">
+        <ul>
+          <li v-for="article in list" :key="article._path">
+            <NuxtLink :to="localePath(article._path)"
+              >{{ article.title }}
+            </NuxtLink>
+          </li>
+        </ul>
+      </template>
+      <template #not-found>
+        <p>No articles found.</p>
+      </template>
+    </ContentList>
+    <NuxtPage />
+  </main>
 </template>
