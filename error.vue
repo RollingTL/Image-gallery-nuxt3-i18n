@@ -2,15 +2,15 @@
 import type { NuxtError } from '#app'
 const localePath = useLocalePath()
 
-defineProps<{
-  error: NuxtError
-}>()
+defineProps({
+  error: Object as () => NuxtError
+})
 </script>
 
 <template>
   <div>
     <h2>
-      {{ error.statusCode }}
+      {{ error ? error.statusCode : 'Error' }}
     </h2>
     <p>{{ $t('errorPageMessage') }}</p>
     <button @click="$router.push(localePath('/'))">
