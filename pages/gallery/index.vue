@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
-const { t, locale } = useI18n()
+const { locale } = useI18n()
 const localePath = useLocalePath()
 const query: QueryBuilderParams = {
   path: localePath('/gallery')
 }
+console.log(query)
 </script>
 <template>
   <main>
-    {{ localePath('/gallery') }}
-    <ContentList :query="query">
+    <ContentList :query="query" :key="'galleryList' + locale">
       <template #default="{ list }">
         <ul>
           <li v-for="article in list" :key="article._path">
@@ -22,7 +22,9 @@ const query: QueryBuilderParams = {
       <template #not-found>
         <p>No articles found.</p>
       </template>
+      <template #pending>
+        <p>...</p>
+      </template>
     </ContentList>
-    <NuxtPage />
   </main>
 </template>

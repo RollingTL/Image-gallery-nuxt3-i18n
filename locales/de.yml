@@ -19,3 +19,8 @@ galleryMetaTitle: 'Galerie der Kunstwerke'
 galleryMetaDescription: 'Liste der Gemälde'
 galleryTopTitle: 'Titel der Galerieseite'
 galleryIntroText: 'Text der Galerie'
+# error
+errorPageMessage: 'Seite nicht gefunden'
+backToHomePage: 'Zurück zur Startseite'
+errorGalleryMessage: 'Nicht gefunden'
+backToGallery: 'Zurück zur Galerie'

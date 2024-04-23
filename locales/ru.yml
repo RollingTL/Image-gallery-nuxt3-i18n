@@ -19,3 +19,8 @@ galleryMetaTitle: 'Галерея произведений'
 galleryMetaDescription: 'Список картин'
 galleryTopTitle: 'Заголовок галереи'
 galleryIntroText: 'Текст галереи'
+# error
+errorPageMessage: 'Страница не найдена'
+backToHomePage: 'Вернуться на главную страницу'
+errorGalleryMessage: 'Не найдено'
+backToGallery: 'Вернуться в галерею'

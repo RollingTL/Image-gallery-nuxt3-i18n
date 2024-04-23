@@ -19,3 +19,8 @@ galleryMetaTitle: 'Gallery of artwork'
 galleryMetaDescription: 'List or paintings'
 galleryTopTitle: 'Gallery top title'
 galleryIntroText: 'Gallery text'
+# error
+errorPageMessage: 'Page not found'
+backToHomePage: 'Back to home page'
+errorGalleryMessage: 'Not found'
+backToGallery: 'Back to gallery'
