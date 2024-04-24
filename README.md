@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# Multilingual static site based on Nuxt Content, Nuxt 3, nuxtjs/i18n
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Boilerplate to start localized static site. Includes two static routs and dynamic routes and metadata for each page.
 
 ## Setup
 
@@ -9,15 +9,6 @@ Make sure to install the dependencies:
 ```bash
 # npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
 ## Development Server
@@ -40,7 +31,7 @@ npx nuxi generate
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
-Then copy content of `dist` folder to root of your web site.
+Then copy content of `dist` folder to `public` folder of your web site.
 
 If necessary create .htaccess and robots.txt files.
 
