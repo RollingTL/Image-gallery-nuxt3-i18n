@@ -2,11 +2,11 @@
 
 Boilerplate to start localized static site. Includes two static routs and dynamic routes and metadata for each page.
 
-Gallery index page
+### Gallery index page:
 
 ![gallery](https://github.com/RollingTL/Image-gallery-nuxt3-i18n/blob/main/images/gallery.png?raw=trues)
 
-Gallery item page
+### Gallery item page:
 
 ![gallery item](https://github.com/RollingTL/Image-gallery-nuxt3-i18n/blob/main/images/item.png?raw=trues)
 
